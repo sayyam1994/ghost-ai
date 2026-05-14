@@ -29,60 +29,18 @@ export default function RootLayout({
       appearance={{
         theme: dark,
         variables: {
-          colorBackground: 'var(--bg-surface)',
-          colorInput: 'var(--bg-subtle)',
-          colorInputForeground: 'var(--text-primary)',
-          colorForeground: 'var(--text-primary)',
-          colorMuted: 'var(--text-secondary)',
-          colorPrimary: 'var(--accent-primary)',
-          colorDanger: 'var(--state-error)',
-          colorSuccess: 'var(--state-success)',
-          colorNeutral: 'var(--text-muted)',
-          colorBorder: 'var(--border-default)',
-          borderRadius: '0.75rem',
+          colorBackground: 'var(--color-bg-base)',
+          colorNeutral: 'var(--color-text-primary)',
+          colorPrimary: 'var(--color-accent-primary)',
+          colorPrimaryForeground: 'var(--color-bg-base)',
+          colorForeground: 'var(--color-text-primary)',
+          colorInput: 'var(--color-bg-elevated)',
+          colorInputForeground: 'var(--color-text-primary)',
+          colorDanger: 'var(--color-state-error)',
+          colorSuccess: 'var(--color-state-success)',
+          colorWarning: 'var(--color-state-warning)',
+          borderRadius: 'var(--radius)',
           fontFamily: 'var(--font-geist-sans)'
-        },
-        elements: {
-          footer: {
-            background: 'var(--bg-surface)',
-            borderTop: '1px solid var(--border-default)',
-            color: 'var(--text-faint)'
-          },
-          footerItem: { color: 'var(--text-faint)' },
-          footerAction: {
-            background: 'var(--bg-surface)',
-            color: 'var(--text-faint)'
-          },
-          footerActionText: { color: 'var(--text-faint)' },
-          footerActionLink: { color: 'var(--text-muted)' },
-          footerPages: {
-            background: 'var(--bg-surface)',
-            color: 'var(--text-faint)'
-          },
-          footerPagesLink: { color: 'var(--text-faint)' },
-          userButtonPopoverFooter: {
-            background: 'var(--bg-elevated)',
-            borderTop: '1px solid var(--border-default)',
-            color: 'var(--text-faint)'
-          },
-          userButtonPopoverFooterPagesLink: { color: 'var(--text-faint)' },
-          /* UserProfile modal */
-          card: {
-            background: 'var(--bg-surface)',
-            boxShadow: 'none',
-            border: '1px solid var(--border-default)'
-          },
-          navbar: {
-            background: 'var(--bg-surface)',
-            borderRight: '1px solid var(--border-default)'
-          },
-          navbarButton: { color: 'var(--text-secondary)' },
-          'navbarButton:active': {
-            color: 'var(--text-primary)',
-            background: 'var(--bg-elevated)'
-          },
-          scrollBox: { background: 'var(--bg-surface)' },
-          pageScrollBox: { background: 'var(--bg-base)' }
         }
       }}
     >
