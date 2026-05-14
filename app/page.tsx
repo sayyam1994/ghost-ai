@@ -1,14 +1,13 @@
+import { Button } from '@/components/ui/button'
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <h1 className="text-5xl font-bold text-center sm:text-left">
-          Ghost AI
-        </h1>
-        <p className="mt-5 text-2xl text-zinc-700 dark:text-zinc-300 text-center sm:text-left">
-          An AI assistant that helps you with your tasks.
-        </p>
-      </main>
+      Ghost AI
+      <p className="mt-5 text-2xl text-zinc-700 dark:text-zinc-300 text-center sm:text-left">
+        An AI assistant that helps you with your tasks.
+      </p>
+      <Button className="mt-5">Get Started</Button>
     </div>
   )
 }
