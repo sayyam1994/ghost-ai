@@ -9,13 +9,15 @@ change.
 
 ## Current Goal
 
-- Feature 03 (TBD)
+- Feature 04 (TBD)
 
 ## Completed
 
 - `01-design-system.md` — shadcn/ui initialised (Tailwind v4), Button, Card, Dialog, Input, Tabs, Textarea, ScrollArea added, lucide-react installed, `lib/utils.ts` with `cn()` created, `globals.css` updated to dark-only theme with project custom tokens.
 
 - `02-editor.md` — `EditorNavbar` and `ProjectSidebar` shell components created in `components/editor/`; navbar has sidebar toggle with `PanelLeftOpen`/`PanelLeftClose` icons; sidebar floats above content, slides in from left, has My Projects / Shared tabs and a New Project button.
+
+- `03-auth.md` — `ClerkProvider` wraps root layout with `dark` theme from `@clerk/ui/themes` and CSS variable overrides; `proxy.ts` at project root with protected-first middleware (public: `/sign-in`, `/sign-up`); sign-in/sign-up pages with two-panel layout (left: logo + feature list, right: Clerk form, mobile: form only); `/` redirects to `/editor` if authenticated, `/sign-in` otherwise; `/editor` route created with existing editor shell; `UserButton` added to editor navbar right section; `@clerk/ui` installed; sign-in/sign-up URL env vars added.
 
 ## In Progress
 
