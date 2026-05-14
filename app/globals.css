@@ -108,3 +108,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Override Clerk footer gradient background */
+.cl-footer,
+[data-localization-key='footerActionText'],
+.cl-footerAction,
+.cl-footerPages {
+  background: var(--bg-surface) !important;
+  background-image: none !important;
+}
+
+/* Override Clerk UserProfile card and navbar background */
+.cl-card,
+.cl-navbar,
+.cl-scrollBox,
+.cl-userProfile-root .cl-navbar {
+  background: var(--bg-surface) !important;
+  background-image: none !important;
+}
+
+.cl-pageScrollBox {
+  background: var(--bg-base) !important;
+  background-image: none !important;
+}
