@@ -9,11 +9,13 @@ change.
 
 ## Current Goal
 
-- Feature 02 (TBD)
+- Feature 03 (TBD)
 
 ## Completed
 
 - `01-design-system.md` — shadcn/ui initialised (Tailwind v4), Button, Card, Dialog, Input, Tabs, Textarea, ScrollArea added, lucide-react installed, `lib/utils.ts` with `cn()` created, `globals.css` updated to dark-only theme with project custom tokens.
+
+- `02-editor.md` — `EditorNavbar` and `ProjectSidebar` shell components created in `components/editor/`; navbar has sidebar toggle with `PanelLeftOpen`/`PanelLeftClose` icons; sidebar floats above content, slides in from left, has My Projects / Shared tabs and a New Project button.
 
 ## In Progress
 
@@ -21,7 +23,7 @@ change.
 
 ## Next Up
 
-- Feature 02 (TBD)
+- Feature 03 (TBD)
 
 ## Open Questions
 
