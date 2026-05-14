@@ -15,7 +15,7 @@ export function ProjectSidebar({ isOpen, onClose }: ProjectSidebarProps) {
       {/* Overlay backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40"
+          className="fixed left-0 right-0 bottom-0 top-12 z-40"
           aria-hidden="true"
           onClick={onClose}
         />
