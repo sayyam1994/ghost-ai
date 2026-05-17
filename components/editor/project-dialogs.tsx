@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import type { MockProject } from '@/hooks/use-project-dialogs'
+import type { ProjectWithOwnership } from '@/lib/projects'
 
 // ---------------------------------------------------------------------------
 // Create Project Dialog
@@ -92,7 +92,7 @@ export function CreateProjectDialog({
 interface RenameProjectDialogProps {
   open: boolean
   onClose: () => void
-  project: MockProject | null
+  project: ProjectWithOwnership | null
   projectName: string
   onProjectNameChange: (value: string) => void
   slug: string
@@ -160,7 +160,7 @@ export function RenameProjectDialog({
 interface DeleteProjectDialogProps {
   open: boolean
   onClose: () => void
-  project: MockProject | null
+  project: ProjectWithOwnership | null
   isLoading: boolean
   onConfirm: () => void
 }

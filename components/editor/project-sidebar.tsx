@@ -4,15 +4,16 @@ import { X, Plus, Pencil, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import type { MockProject } from '@/hooks/use-project-dialogs'
+import type { ProjectWithOwnership } from '@/lib/projects'
 
 interface ProjectSidebarProps {
   isOpen: boolean
   onClose: () => void
-  projects: MockProject[]
+  ownedProjects: ProjectWithOwnership[]
+  sharedProjects: ProjectWithOwnership[]
   onNewProject: () => void
-  onRenameProject: (project: MockProject) => void
-  onDeleteProject: (project: MockProject) => void
+  onRenameProject: (project: ProjectWithOwnership) => void
+  onDeleteProject: (project: ProjectWithOwnership) => void
 }
 
 function ProjectItem({
@@ -20,9 +21,9 @@ function ProjectItem({
   onRename,
   onDelete
 }: {
-  project: MockProject
-  onRename?: (project: MockProject) => void
-  onDelete?: (project: MockProject) => void
+  project: ProjectWithOwnership
+  onRename?: (project: ProjectWithOwnership) => void
+  onDelete?: (project: ProjectWithOwnership) => void
 }) {
   return (
     <div className="group flex items-center gap-1 rounded-xl px-2 py-1.5 hover:bg-bg-elevated cursor-pointer">
@@ -64,14 +65,12 @@ function ProjectItem({
 export function ProjectSidebar({
   isOpen,
   onClose,
-  projects,
+  ownedProjects,
+  sharedProjects,
   onNewProject,
   onRenameProject,
   onDeleteProject
 }: ProjectSidebarProps) {
-  const ownedProjects = projects.filter((p) => p.owned)
-  const sharedProjects = projects.filter((p) => !p.owned)
-
   return (
     <>
       {/* Backdrop scrim */}
