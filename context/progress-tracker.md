@@ -23,13 +23,17 @@ change.
 
 - `05-prisma.md` — `Project` and `ProjectCollaborator` models in `prisma/models/project.prisma`; Prisma client singleton in `lib/prisma.ts` with adapter-pg / Accelerate branching and dev global cache; migration `20260517095038_init` applied; client generated to `app/generated/prisma/`.
 
+- `06-project-apis.md` — `GET /api/projects`, `POST /api/projects`, `PATCH /api/projects/[projectId]`, `DELETE /api/projects/[projectId]`; Clerk `userId` as `ownerId`; 401 for unauthenticated, 403 for non-owner mutations; build passes.
+
+- `07-wire-editor-home.md` — `lib/projects.ts` server data helper with `getProjectsForUser()`; `hooks/use-project-actions.ts` with real `POST`/`PATCH`/`DELETE` API calls, navigation on create, refresh on rename, redirect on delete; `EditorPage` converted to server component; `EditorHomeClient` client wrapper; sidebar accepts `ownedProjects`/`sharedProjects` props; dialogs use `ProjectWithOwnership` type; `npm run build` passes.
+
 ## In Progress
 
 - None.
 
 ## Next Up
 
-- Feature 05 (TBD)
+- Feature 08 (TBD)
 
 ## Open Questions
 
