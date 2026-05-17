@@ -19,16 +19,18 @@ export async function getProjectsForUser(): Promise<{
   if (!userId) return { owned: [], shared: [] }
 
   const user = await currentUser()
-  const email = user?.emailAddresses[0]?.emailAddress
+  const emails = (user?.emailAddresses ?? [])
+    .map((e) => e.emailAddress)
+    .filter((e): e is string => Boolean(e))
 
   const [ownedProjects, sharedCollabs] = await Promise.all([
     prisma.project.findMany({
       where: { ownerId: userId },
       orderBy: { createdAt: 'desc' }
     }),
-    email
+    emails.length > 0
       ? prisma.projectCollaborator.findMany({
-          where: { email },
+          where: { email: { in: emails } },
           include: { project: true },
           orderBy: { createdAt: 'desc' }
         })

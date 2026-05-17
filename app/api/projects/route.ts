@@ -21,7 +21,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await request.json().catch(() => ({}))
-  const name: string = body.name?.trim() || 'Untitled Project'
+  const trimmedName = typeof body.name === 'string' ? body.name.trim() : ''
+  const name = trimmedName || 'Untitled Project'
 
   const project = await prisma.project.create({
     data: { ownerId: userId, name }

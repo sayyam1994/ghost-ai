@@ -26,6 +26,7 @@ export function useProjectActions(activeProjectId?: string) {
   const [projectName, setProjectName] = useState('')
   const [suffix, setSuffix] = useState(() => shortSuffix())
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const slug = projectName.trim() ? `${toSlug(projectName)}-${suffix}` : ''
 
@@ -51,11 +52,13 @@ export function useProjectActions(activeProjectId?: string) {
     setSelectedProject(null)
     setProjectName('')
     setIsLoading(false)
+    setError(null)
   }
 
   async function handleCreate() {
     if (!projectName.trim() || !slug) return
     setIsLoading(true)
+    setError(null)
     try {
       const res = await fetch('/api/projects', {
         method: 'POST',
@@ -66,7 +69,8 @@ export function useProjectActions(activeProjectId?: string) {
       const project = (await res.json()) as { id: string }
       closeDialog()
       router.push(`/editor/${project.id}`)
-    } catch {
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to create project')
       setIsLoading(false)
     }
   }
@@ -74,6 +78,7 @@ export function useProjectActions(activeProjectId?: string) {
   async function handleRename() {
     if (!projectName.trim() || !selectedProject) return
     setIsLoading(true)
+    setError(null)
     try {
       const res = await fetch(`/api/projects/${selectedProject.id}`, {
         method: 'PATCH',
@@ -83,7 +88,8 @@ export function useProjectActions(activeProjectId?: string) {
       if (!res.ok) throw new Error('Failed to rename project')
       closeDialog()
       router.refresh()
-    } catch {
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to rename project')
       setIsLoading(false)
     }
   }
@@ -91,6 +97,7 @@ export function useProjectActions(activeProjectId?: string) {
   async function handleDelete() {
     if (!selectedProject) return
     setIsLoading(true)
+    setError(null)
     try {
       const res = await fetch(`/api/projects/${selectedProject.id}`, {
         method: 'DELETE'
@@ -102,7 +109,8 @@ export function useProjectActions(activeProjectId?: string) {
       } else {
         router.refresh()
       }
-    } catch {
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to delete project')
       setIsLoading(false)
     }
   }
@@ -113,6 +121,7 @@ export function useProjectActions(activeProjectId?: string) {
     projectName,
     setProjectName,
     isLoading,
+    error,
     slug,
     openCreate,
     openRename,
