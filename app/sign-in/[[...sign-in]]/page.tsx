@@ -8,7 +8,7 @@ export default function SignInPage() {
       <div className="hidden lg:flex lg:w-1/2 flex-col justify-between bg-bg-surface px-16 py-12">
         {/* Logo */}
         <div className="flex items-center gap-2.5">
-          <div className="h-7 w-7 rounded-lg bg-accent-primary flex-shrink-0" />
+          <div className="h-7 w-7 rounded-lg bg-accent-primary shrink-0" />
           <span className="text-base font-semibold text-text-primary">
             Ghost AI
           </span>
@@ -29,7 +29,7 @@ export default function SignInPage() {
           {/* Feature list */}
           <ul className="space-y-6">
             <li className="flex items-start gap-3">
-              <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-accent-primary-dim">
+              <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-primary-dim">
                 <Bot className="h-4 w-4 text-accent-primary" />
               </div>
               <div>
@@ -43,7 +43,7 @@ export default function SignInPage() {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-accent-primary-dim">
+              <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-primary-dim">
                 <Share2 className="h-4 w-4 text-accent-primary" />
               </div>
               <div>
@@ -57,7 +57,7 @@ export default function SignInPage() {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-accent-primary-dim">
+              <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-primary-dim">
                 <FileText className="h-4 w-4 text-accent-primary" />
               </div>
               <div>
