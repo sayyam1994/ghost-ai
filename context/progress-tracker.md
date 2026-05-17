@@ -19,13 +19,15 @@ change.
 
 - `03-auth.md` — `ClerkProvider` wraps root layout with `dark` theme from `@clerk/ui/themes` and CSS variable overrides; `proxy.ts` at project root with protected-first middleware (public: `/sign-in`, `/sign-up`); sign-in/sign-up pages with two-panel layout (left: logo + feature list, right: Clerk form, mobile: form only); `/` redirects to `/editor` if authenticated, `/sign-in` otherwise; `/editor` route created with existing editor shell; `UserButton` added to editor navbar right section; `@clerk/ui` installed; sign-in/sign-up URL env vars added.
 
+- `04-project-dialogs.md` — editor home screen (heading + description + New Project button); `useProjectDialogs` hook managing dialog/form/loading state with mock data; Create/Rename/Delete project dialogs with slug preview, auto-focus, and Enter-to-submit; sidebar project items with hover rename/delete actions (owned only); backdrop scrim; sidebar footer and home button wired to Create dialog.
+
 ## In Progress
 
 - None.
 
 ## Next Up
 
-- Feature 03 (TBD)
+- Feature 05 (TBD)
 
 ## Open Questions
 
